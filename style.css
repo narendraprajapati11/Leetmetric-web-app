@@ -8,10 +8,12 @@
 body {
     background-color: rgb(89, 90, 106);
     color: white;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 10px;
+    /* padding for small devices */
 }
 
 .container {
@@ -20,13 +22,14 @@ body {
     gap: 1rem;
     background-color: rgb(69, 64, 64);
     padding: 20px;
-    border-radius: 5px;
-    width: 50%;
+    border-radius: 10px;
+    width: 100%;
     max-width: 600px;
 }
 
 h1 {
     font-size: 2rem;
+    text-align: center;
 }
 
 .user-container {
@@ -37,18 +40,22 @@ h1 {
 
 .user-input-container {
     display: flex;
-    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+    /* allow wrapping on small screens */
 }
 
 #user-input {
-    width: 80%;
+    flex: 1;
+    min-width: 150px;
     padding: 0.4rem;
     border-radius: 5px;
 }
 
 #search-btn {
-    padding: 0.4rem;
+    padding: 0.4rem 0.8rem;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .circle {
@@ -75,9 +82,9 @@ h1 {
 
 .progress {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 15px;
 }
 
 .stats-cards {
@@ -86,7 +93,7 @@ h1 {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    justify-content: space-evenly;
+    justify-content: center;
 }
 
 h4 {
@@ -95,10 +102,29 @@ h4 {
 
 .card {
     background-color: rgb(230, 146, 44);
-    width: 40%;
-    max-width: 290px;
+    flex: 1 1 45%;
+    /* responsive width */
+    max-width: 280px;
     padding: 10px;
     border-radius: 10px;
     font-size: 1rem;
     min-height: 4rem;
+    text-align: center;
+}
+
+/* Mobile adjustments */
+@media (max-width: 480px) {
+    .circle {
+        width: 100px;
+        height: 100px;
+        font-size: 0.9rem;
+    }
+
+    .card {
+        flex: 1 1 100%;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
 }
